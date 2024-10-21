@@ -6,6 +6,53 @@ type Tetromino = {
   color: number;
 };
 
+// Define Tetromino shapes
+const TETROMINOES: Tetromino[] = [
+  { shape: [[1, 1, 1, 1]], color: 1 }, // I
+  {
+    shape: [
+      [1, 1],
+      [1, 1],
+    ],
+    color: 2,
+  }, // O
+  {
+    shape: [
+      [1, 1, 1],
+      [0, 1, 0],
+    ],
+    color: 3,
+  }, // T
+  {
+    shape: [
+      [1, 1, 1],
+      [1, 0, 0],
+    ],
+    color: 4,
+  }, // L
+  {
+    shape: [
+      [1, 1, 1],
+      [0, 0, 1],
+    ],
+    color: 5,
+  }, // J
+  {
+    shape: [
+      [1, 1, 0],
+      [0, 1, 1],
+    ],
+    color: 6,
+  }, // S
+  {
+    shape: [
+      [0, 1, 1],
+      [1, 1, 0],
+    ],
+    color: 7,
+  }, // Z
+];
+
 const BOARD_WIDTH = 10;
 const BOARD_HEIGHT = 20;
 
