@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
 import Home from "./components/home";
 import Foo from "./components/foo.tsx";
+import Tetris from "./components/tetris.tsx";
 import "./App.css";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/foo" element={<Foo />} />
+            <Route path="/tetris" element={<Tetris />} />
           </Route>
         </Routes>
       </div>

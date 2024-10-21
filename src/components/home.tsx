@@ -6,6 +6,7 @@ export default function Home() {
       <ul>
         <li>
           <Link to="/foo">Go to "foo" page</Link>
+          <Link to="/tetris">Go to "tetris" page</Link>
         </li>
       </ul>
     </>
