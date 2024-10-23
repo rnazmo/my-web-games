@@ -14,8 +14,39 @@ const createEmptyBoard = (): Board =>
     .fill(0)
     .map(() => Array(BOARD_WIDTH).fill(0));
 
+// テトリミノの形を定義（T字型）
+const TETROMINO_T = [
+  [0, 1, 0],
+  [1, 1, 1],
+  [0, 0, 0],
+];
+
+interface Position {
+  x: number;
+  y: number;
+}
+
 export default function Tetris() {
   const board = createEmptyBoard();
+
+  board[1][1] = 1;
+  board[1][2] = 2;
+
+  const currentTetrominoShape = TETROMINO_T;
+
+  const currentTetrominoPosition = {
+    x: 5,
+    y: 5,
+  };
+
+  for (let y = 0; y < currentTetrominoShape.length; y++) {
+    for (let x = 0; x < currentTetrominoShape[y].length; x++) {
+      if (currentTetrominoShape[y][x]) {
+        board[currentTetrominoPosition.y + y][currentTetrominoPosition.x + x] =
+          1;
+      }
+    }
+  }
 
   // TODO: implement game logic here
 
@@ -28,9 +59,7 @@ export default function Tetris() {
             row.map((cell, x) => (
               <div
                 key={`${x},${y}`}
-                className={`w-6 h-6 ${
-                  cell ? `bg-color-${cell}` : "bg-gray-100"
-                }`}
+                className={`w-6 h-6 ${cell ? `bg-gray-400` : "bg-gray-100"}`}
               />
             )),
           )}
